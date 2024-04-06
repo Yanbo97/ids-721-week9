@@ -2,7 +2,7 @@
 from transformers import pipeline
 import streamlit as st
 
-model = pipeline("ner", grouped_entities=True)
+model = pipeline("ner", model="dbmdz/bert-large-cased-finetuned-conll03-english", grouped_entities=True)
 input_text = st.text_area("Enter Text", height=100)
 generate_button = st.button("Identify Entities")
 if generate_button:
